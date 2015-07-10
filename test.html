@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" http-equiv="Content-Type" content="text/html; ">
+  <link type="text/css" rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.min.css" />
+  <link type="text/css" rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.structure.min.css" />
+  <link type="text/css" rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.theme.min.css" />
+  <script type="text/javascript" src="jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+  <script type="text/javascript" src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+
+  <script type="text/javascript">
+    $(function ($){
+      var $wrap = $(".wrap");
+      var $sqr = $(".square");
+
+      $wrap.css ({
+          width : "800px",
+          height : "600px",
+          border : "1px dotted #AA0000"
+        });
+
+      $sqr.css    ({
+        width : "100px" ,
+        height : "100px" ,
+        color : "gray" ,
+        border : "1px dotted #111111"
+      });
+
+      $sqr.css({
+        backgroundColor : "#EEEEEE" ,
+        float : "left"
+      });
+
+      $sqr.draggable();
+
+      $wrap.css("overflow","hidden");
+      $wrap.append("<div style='clear: both'></div>");
+
+    });
+
+  </script>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="square" >drag1</div>
+  <div class="square" >drag2</div>
+  <div class="square" >drag3 </div>
+  <div class="square" >drag4</div>
+</div>
+</body>
+</html>

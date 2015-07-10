@@ -1,0 +1,35 @@
+<html>
+<head>
+<script type="text/javascript">
+    function outer(){
+        var x=5;
+/*      unnamed function */
+/*
+        return function(){
+            document.write(x);
+            x=x+1;
+        };
+*/
+/*      named function   */
+        function inner(){
+            document.write(x);
+            x=x+1;
+        };
+        return inner;
+    };
+
+var closure= outer();
+closure();
+closure();
+closure();
+
+</script>
+</head>
+<body>
+    <p>first</p>
+
+</body>
+</html>
+
+
+

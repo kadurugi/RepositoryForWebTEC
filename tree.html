@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" http-equiv="Content-Type" content="text/html; ">
+    <link type="text/css" rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.min.css" />
+    <link type="text/css" rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.structure.min.css" />
+    <link type="text/css" rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.theme.min.css" />
+    <link type="text/css" rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css" />
+    <script type="text/javascript" src="jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+    <script type="text/javascript" src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script tyoe="text/javascript" src="tree.js"></script>
+  </head>
+  <body>
+    <!--
+    ----OK----
+-->
+    <div class="outer">構成例
+      <ul>
+        <li>
+          <div id="wrap">
+            <div id="file">README</div>
+            <div id="text">READMEの記述</div>
+          </div>
+        </li>
+        <li>
+          <div id="wrap">
+            <div id="file">common_init.yml</div>
+            <div id="text">共通設定(ntp,selinuxなど)</div>
+          </div>
+        </li>
+        <li>
+          <div id="wrap">
+            <div id="file">hadoop.yml</div>
+            <div id="text">処理対象毎の記述(Hadoop)</div>
+          </div>
+        </li>
+        <li>
+          <div id="wrap">
+            <div id="file">jboss.yml</div>
+            <div id="text">共通設定(jboss)</div>
+          </div>
+        </li>
+        <li>
+          <div id="wrap">
+            <div id="folder">group_vars</div>
+            <div id="text">グループ毎の変数</div>
+          </div>
+          <ul>
+            <li>
+              <div id="wrap">
+                <div id="file">jboss</div>
+                <div id="text">jbossグループ共通の変数</div>
+              </div>
+            </li>
+            <li>
+              <div id="wrap">
+                <div id="file">coherence</div>
+                <div id="text">coherenceグループ共通の変数</div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <div id="wrap">
+            <div id="folder">inventory</div>
+            <div id="text">ノードリスト</div>
+          </div>
+          <ul>
+            <li>
+              <div id="wrap">
+                <div id="file">production.ini</div>
+                <div id="text">商用環境のノードリスト</div>
+              </div>
+            </li>
+            <li>
+              <div id="wrap">
+                <div id="file">development.ini</div>
+                <div id="text">開発環境のノードリスト</div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <div id="wrap">
+            <div id="folder">roles</div>
+            <div id="text">ロール(処理)</div>
+          </div>
+          <ul>
+            <li>
+              <div id="wrap">
+                <div id="folder">common</div>
+                <div id="text">共通設定の具体的な処理</div>
+              </div>
+              <ul>
+                <li>
+                  <div id="wrap">
+                    <div id="folder">defaults</div>
+                    <div id="text">defaults</div>
+                  </div>
+                  <ul>
+                    <li>
+                      <div id="wrap">
+                        <div id="file">main.yml</div>
+                        <div id="text">main</div>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <div id="wrap">
+                    <div id="folder">tasks</div>
+                    <div id="text">tasks</div>
+                  </div>
+                </li>
+                <ul>
+                  <li>
+                    <div id="wrap">
+                      <div id="file">main.yml</div>
+                      <div id="text">main</div>
+                    </div>
+                  </li>
+                  <li>
+                    <div id="wrap">
+                      <div id="file">centos6.yml</div>
+                      <div id="text">centos6</div>
+                    </div>
+                  </li>
+                  <li>
+                    <div id="wrap">
+                      <div id="file">centos7.yml</div>
+                      <div id="text">centos7</div>
+                    </div>
+                  </li>
+                </ul>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+
+        <li>
+          <div id ="wrap">
+            <div id ="folder">hadoop_node_list</div>
+            <div id ="text">hadoop_node_list</div>
+          </div>
+          <ul>
+            <li>
+              <div id ="wrap">
+                <div id ="folder">defaults</div>
+                <div Id ="text">defaults</div>
+              </div>
+              <ul>
+                <li>
+                  <div id ="wrap">
+                    <div id ="file">main.yml</div>
+                    <div id ="text">main.yml</div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <li>
+                <div id ="wrap">
+                  <div id ="folder">tasks</div>
+                  <div Id ="text">tasks</div>
+                </div>
+              </li>
+              <ul>
+                <li>
+                  <div id ="wrap">
+                    <div id ="file">ambari.yml</div>
+                    <div id ="text">ambari.yml</div>
+                  </div>
+                </li>
+                <li>
+                  <div id ="wrap">
+                    <div id ="file">install.yml</div>
+                    <div id ="text">install.yml</div>
+                  </div>
+                </li>
+                <li>
+                  <div id ="wrap">
+                    <div id ="file">main.yml</div>
+                    <div id ="text">main.yml</div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div id ="wrap">
+                <div id ="folder">templates</div>
+                <div Id ="text">templates</div>
+              </div>
+              <ul>
+                <li>
+                  <div id ="wrap">
+                    <div id ="file">ambari.repo.j2</div>
+                    <div id ="text">ambari.repo.j2</div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <div id="wrap">
+            <div id="folder">jboss</div>
+            <div id="text">jboss</div>
+          </div>
+          <ul>
+            <li>
+              <div id="wrap">
+                <div id="folder">defaults</div>
+                <div Id="text">defaults</div>
+              </div>
+              <ul>
+                <li>
+                  <div id="wrap">
+                    <div id="file">main.yml</div>
+                    <div id="text">main.yml</div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div id="wrap">
+                <div id="folder">handlers</div>
+                <div Id="text">handlers</div>
+              </div>
+              <ul>
+                <div id="wrap">
+                  <div id="file">main.yml</div>
+                  <div id="text">main.yml</div>
+                </div>
+              </ul>
+            </li>
+            <li>
+              <div id="wrap">
+                <div id="folder">tasks</div>
+                <div Id="text">tasks</div>
+              </div>
+              <ul>
+                <li>
+                  <div id="wrap">
+                    <div id="file">config.yml</div>
+                    <div id="text">config.yml</div>
+                  </div>
+                </li>
+                <li>
+                  <div id="wrap">
+                    <div id="file">main.yml</div>
+                    <div id="text">main.yml</div>
+                  </div>
+                </li>
+                <li>
+                  <div id="wrap">
+                    <div id="file">user.yml</div>
+                    <div id="text">user.yml</div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div id="wrap">
+                <div id="folder">templates</div>
+                <div Id="text">templates</div>
+              </div>
+              <ul>
+                <li>
+                  <div id="wrap">
+                    <div id="file">jboss-as-standalone.sh</div>
+                    <div id="text">jboss-as-standalone.sh</div>
+                  </div>
+                </li>
+                <li>
+                  <div id="wrap">
+                    <div id="file">standalone.xml</div>
+                    <div id="text">standalone.xml</div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

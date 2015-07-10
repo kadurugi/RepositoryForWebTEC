@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" http-equiv="Content-Type" content="text/html; ">
+  <link type="text/css" rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.min.css" />
+  <link type="text/css" rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.structure.min.css" />
+  <link type="text/css" rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.theme.min.css" />
+  <script type="text/javascript" src="jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+  <script type="text/javascript" src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+
+  <script type="text/javascript">
+    $(function ($){
+        var $i=0;
+        var $id;
+
+        function loop(){
+//          $("#progress").progressbar('value',$i++);
+//          $("#prog").text("loading..." + Math.ceil($("#progress").progressbar('value') / $("#progress").progressbar('option','max')*100.0  )+ "%");
+          $("#prog").text( ($i++) + "%");
+          if ($i > 100) {
+            $("#prog").text("Loaded.");
+            $("#progress").progressbar('value',true);
+            $("#progress").progressbar('value',100);
+            clearInterval($id);
+          }
+        }
+        $(".wrap").tabs();
+        $(".wrap").draggable();
+
+        $(".tab").css({
+          border       : "1px dotted gray" ,
+          padding      : "4px" ,
+          marginBottom: "-1px"
+        });
+
+        $(".aco").accordion({header: "h3"});
+        $("#progress").css("width","200px");
+        $("#progress").css("height","10px");
+        $("#progress").progressbar({
+          value: 0
+        });
+        $("#btn").click( function () {
+            $i = 0;
+            $("#progress").progressbar('value',0);
+            $("#progress").progressbar('value',false);
+            clearInterval($id);
+            $id = setInterval(loop,10);
+        });
+    });
+    </script>
+</head>
+<body>
+
+<div class="wrap" stype="clear: both">
+  <ul>
+    <li><a href="#tab-vagrant" class="tab">Vagrant</a></li>
+    <li><a href="#tab-docker" class="tab">Docker</a></li>
+    <li><a href="#tab-node" class="tab">Node.js</a></li>
+  </ul>
+  <div id="tab-vagrant">
+      <p>Vagrant Installation</p>
+      <div class="aco">
+        <h3><a href="#">up</a></h3>
+        <p>description about up </p>
+        <h3><a href="#">mid</a></h3>
+        <p>description about mid </p>
+        <h3><a href="#">down</a></h3>
+        <p>description aboud down</p>
+      </div>
+  </div>
+
+  <div id="tab-docker">
+      <p>Docker Installation</p>
+      <input type="button" id="btn" value="progress!"></button>
+      <div id="progress"></div>
+        <p id="prog"></p>
+  </div>
+
+  <div id="tab-node">
+      <p>Node.js Installation</p>
+  </div>
+
+</div>
+
+</body>
+</html>
